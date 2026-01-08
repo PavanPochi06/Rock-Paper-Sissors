@@ -151,7 +151,7 @@
       if (!isAutoPlaying) {
         intervalId = setInterval(() => {
           playGame(pickComputerMove());
-        }, 1000);
+        }, 500);
         isAutoPlaying = true;
       } else {
         clearInterval(intervalId);
