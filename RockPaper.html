@@ -1,33 +1,106 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
-    <h1>Rock Paper Scissors</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock Paper Scissors – 3D Edition</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <button class="move-button js-rock">
-      <img src="images/rock-emoji.png" class="emoji" />
-    </button>
+<body>
+  <!-- Particle Canvas for explosions -->
+  <canvas id="particles-canvas"></canvas>
 
-    <button class="move-button js-paper">
-      <img src="images/paper-emoji.png" class="emoji" />
-    </button>
+  <div class="game-wrapper">
+    <!-- Title -->
+    <h1 class="game-title">Rock Paper Scissors</h1>
+    <p class="game-subtitle">3D Edition</p>
 
-    <button class="move-button js-scissor">
-      <img src="images/scissor-emoji.png" class="emoji" />
-    </button>
+    <!-- Score Panel -->
+    <div class="score-panel">
+      <div class="score-box wins">
+        <span class="score-label">Wins</span>
+        <span class="score-value js-wins">0</span>
+      </div>
+      <div class="score-box losses">
+        <span class="score-label">Losses</span>
+        <span class="score-value js-losses">0</span>
+      </div>
+      <div class="score-box ties">
+        <span class="score-label">Ties</span>
+        <span class="score-value js-ties">0</span>
+      </div>
+    </div>
 
-    <p class="result js-result"></p>
-    <p class="js-moves"></p>
-    <p class="score js-score"></p>
+    <!-- Choose your move -->
+    <p class="moves-label">Choose your move</p>
 
-    <button class="control-button js-reset">Reset Score</button>
-    <button class="control-button js-auto">Auto Play</button>
+    <div class="buttons-row">
+      <!-- Rock -->
+      <button class="move-button js-rock" title="Rock [R]">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="images/rock-emoji.png" class="emoji" alt="Rock" />
+            <span class="card-label">Rock</span>
+          </div>
+          <div class="card-back">
+            🪨<br />Select!
+          </div>
+        </div>
+      </button>
 
-    <script src="script.js"></script>
-  </body>
+      <!-- Paper -->
+      <button class="move-button js-paper" title="Paper [P]">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="images/paper-emoji.png" class="emoji" alt="Paper" />
+            <span class="card-label">Paper</span>
+          </div>
+          <div class="card-back">
+            📄<br />Select!
+          </div>
+        </div>
+      </button>
+
+      <!-- Scissors -->
+      <button class="move-button js-scissor" title="Scissors [S]">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="images/scissor-emoji.png" class="emoji" alt="Scissors" />
+            <span class="card-label">Scissors</span>
+          </div>
+          <div class="card-back">
+            ✂️<br />Select!
+          </div>
+        </div>
+      </button>
+    </div>
+
+    <!-- Glow divider -->
+    <div class="glow-divider"></div>
+
+    <!-- Battle Arena -->
+    <div class="battle-arena js-arena">
+      <p class="result js-result">Pick a move to begin!</p>
+      <div class="js-moves"></div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls-row">
+      <button class="control-button js-reset">↺ Reset</button>
+      <button class="control-button js-auto">▶ Auto Play</button>
+    </div>
+
+    <!-- Keyboard hint -->
+    <p class="keyboard-hint">
+      <span class="kbd">R</span> Rock &nbsp;
+      <span class="kbd">P</span> Paper &nbsp;
+      <span class="kbd">S</span> Scissors
+    </p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
